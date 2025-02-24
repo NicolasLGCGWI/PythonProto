@@ -32,11 +32,11 @@ def send_protobuf_message(uid, latitude, longitude, altitude, message_type, labe
 
 # Exemple d'utilisation
 send_protobuf_message(
-    uid="unique-id-123",
-    latitude=34.0522,
-    longitude=-118.2437,
-    altitude=100.0,
-    message_type="a-f-G-U-C",
+    uid="test123",
+    latitude=48.853804709748616,
+    longitude=2.34907698507727,
+    altitude=35.0,
+    message_type="b-l-o-tem-a-h",
     label="Test Location",
     description="This is a test message."
 )
