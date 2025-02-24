@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package atak.protobuf;
+
+option java_package = "atak.protobuf";
+option java_outer_classname = "TestMessageOuterClass";
+option java_multiple_files = true;
+
+message TestMessage {
+  string uid = 1;           // Identifiant unique ATAK
+  double latitude = 2;      // Latitude
+  double longitude = 3;     // Longitude
+  double altitude = 4;      // Altitude
+  string type = 5;          // Type CoT (ex: "a-f-G-U-C")
+  string label = 6;         // Nom affiché
+  string description = 7;   // Détails
+  }
