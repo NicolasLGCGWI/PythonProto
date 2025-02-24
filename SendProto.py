@@ -15,6 +15,7 @@ def send_protobuf_message(uid, latitude, longitude, altitude, message_type, labe
 
     # Sérialiser le message en bytes
     serialized_message = test_message.SerializeToString()
+    
 
     # Envoyer le message via un socket (exemple avec UDP)
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -34,9 +35,10 @@ def send_protobuf_message(uid, latitude, longitude, altitude, message_type, labe
 send_protobuf_message(
     uid="test123",
     latitude=48.853804709748616,
-    longitude=2.34907698507727,
+    longitude=2.349076985077279,
     altitude=35.0,
     message_type="b-l-o-tem-a-h",
-    label="Test Location",
-    description="This is a test message."
+    label="Unit Test",
+    description="Test de conversion Protobuf → CoT"
 )
+
