@@ -2,7 +2,7 @@ from  ATAKMessage_pb2  import TestMessage
 import socket
 
 
-def send_protobuf_message(uid, latitude, longitude, altitude, message_type, label, description):
+def send_protobuf_message(uid, latitude, longitude, altitude, message_type, description, label=None):
     # Créer une instance du message TestMessage
     test_message = TestMessage()
     test_message.uid = uid
@@ -10,8 +10,17 @@ def send_protobuf_message(uid, latitude, longitude, altitude, message_type, labe
     test_message.longitude = longitude
     test_message.altitude = altitude
     test_message.type = message_type
-    test_message.label = label
     test_message.description = description
+
+    if label is not None:
+        test_message.label = label
+
+    # Vérifier si le champ optionnel est défini
+    if test_message.HasField("label"):
+        print(f"Label: {test_message.label}")
+        test_message.label = label
+    else:
+        print("Label non défini")  # Ce message doit s'afficher
 
     # Sérialiser le message en bytes
     serialized_message = test_message.SerializeToString()
@@ -38,7 +47,7 @@ send_protobuf_message(
     longitude=2.349076985077279,
     altitude=35.0,
     message_type="b-l-o-tem-a-h",
-    label="Unit Test",
     description="Test de conversion Protobuf → CoT"
+    #, label="Unit Test"
 )
 
