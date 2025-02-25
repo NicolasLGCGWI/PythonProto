@@ -12,6 +12,6 @@ message TestMessage {
   double longitude = 3;     // Longitude
   double altitude = 4;      // Altitude
   string type = 5;          // Type CoT (ex: "a-f-G-U-C")
-  optional string label = 6;         // Nom affiché
-  string description = 7;   // Détails
+  string label = 6;         // Nom affiché
+  optional string description = 7;   // Détails
   }
